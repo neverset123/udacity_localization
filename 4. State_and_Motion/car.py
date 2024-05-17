@@ -82,7 +82,7 @@ class Car(object):
         self.state[1] = predicted_velocity
         
     def turn_right(self):
-        """ Turning left "rotates" the velocity values, so vy = -vx, and vx = vy.
+        """ Turning left "rotates" the velocity values, so vy = vx, and vx = -vy.
         
             For example, if a car is going right at 1 world cell/sec this means 
             vy = 0, vx = 1, 
@@ -95,8 +95,8 @@ class Car(object):
         velocity = self.state[1]
         
         predicted_velocity = [
-            -velocity[1],
-            velocity[0]
+            velocity[1],
+            -velocity[0]
         ]
         
         # Update the state velocity
